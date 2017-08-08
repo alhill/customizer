@@ -1,0 +1,78 @@
+:root{
+    --scale: 0.3;
+    --color: #000000;
+    --bgcolor: #FFFFFF;
+    --xpos: 50%;
+    --ypos: 50%;
+}
+
+
+body{
+    background: #000000;
+    font-family: sans-serif;
+    color: white;
+}
+
+h1{  
+    margin-left: 0.5em;                
+}
+
+.selector{
+    margin: 1em;
+}
+
+label{
+    display: table-cell;
+}
+
+.controles{
+    margin: 1em 5em 0 1em;
+    display: flex;
+}
+
+.cont_svg.active{
+    position: absolute;
+    fill: var(--color);
+    transform: translateX(var(--xpos)) translateY(var(--ypos)) scale(var(--scale));
+}
+
+/*.svg_icon{
+    transform: scale(var(--scale));
+}*/
+
+.cls-3{ /* FONDO DE LA CAMISETA */
+    fill: var(--bgcolor);
+}
+.cls-4{ /* DETALLES DE LA CAMISETA */
+    fill: var(--bgcolor);
+    filter: brightness(0.6);
+}
+
+.nigga .cls-1{
+    fill: #1f0d05;
+}
+.nigga .cls-2{
+    fill: #351b10;
+}
+
+#areadetrabajo{
+    position: relative;
+    width: 60vh;
+    height: 60vh;
+    /*background: url("singlet.jpg") center center;*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.cont_svg{
+    display: inline-block;
+}
+
+.cont_svg.active{
+    border: 1px dashed cyan;
+}
+
+.form-control.color{
+    padding: 0;
+}

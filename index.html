@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Singlet Customizer</title>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat|Quicksand|Roboto:900|Sedgwick+Ave+Display|VT323" rel="stylesheet">
+        <script type="text/javascript" src="http://canvg.github.io/canvg/rgbcolor.js"></script> 
+        <script type="text/javascript" src="http://canvg.github.io/canvg/StackBlur.js"></script>
+        <script type="text/javascript" src="http://canvg.github.io/canvg/canvg.js"></script> 
+        <script type="application/ecmascript" src="script.js"></script> 
+    </head>
+    
+    <body>
+        <h1>Customizer</h1>
+        <div class="controles row">
+            <div class="selector">
+                <label>Image size</label>
+                <input type="range" class="positionselector scalerange" onmousemove="matrix_scale(event)" name="scale" min="0.1" max="2" step="0.01" value="0.60" data-sufijo="">
+            </div>
+            <div class="selector">
+                <label>Item Color</label>
+                <input type="color" name="color" class="form-control color" value="#000000" data-sufijo="" onchange="changeColor(event);">
+            </div>
+            
+            <div class="selector">
+                <label>Shirt Color</label>
+                <input type="color" name="bgcolor" class="form-control color" value="#FFFFFF" data-sufijo="" >
+            </div>
+            
+            <div class="selector">
+                <label>Stock images</label>
+                <select id="stock_selector" class="form-control" style="color: black" onchange="updateItemSelector();">
+                    <option value=""> - </option>
+                    <option value="bolt">Lightning Bolt</option>
+                    <option value="star">Star</option>
+                    <option value="fist">Fist</option>
+                    <option value="penis">Surprise!</option>
+                </select>
+            </div>
+            
+            <div class="selector">
+                <label>Custom image</label>
+                <input id="custom_svg" type="file" title="Only SVG files are compatible" accept=".svg" class="form-control" />
+            </div>
+            
+            <div class="selector">
+                <button id="add_new" class="btn btn-default">ADD ANOTHER ELEMENT</button>
+            </div>
+            
+            <div class="selector">
+                <button id="delete_elem" class="btn btn-default">DELETE ELEMENT</button>
+            </div>
+            
+            <div class="selector">
+                <label>Selection</label>
+                <select class="element_selector form-control" style="color: black">
+                    <option>-</option>
+                </select>
+            </div>
+        </div>
+        <div class="controles row">
+            <div class="selector">
+                <label>Text</label>
+                <input type="text" id="text_content" class="form-control"/>
+            </div>
+            <div class="selector">
+                <label>Font family</label>
+                <select class="form-control" id="text_font">
+                    <option value="Montserrat">Montserrat</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Sedgwick Ave Display">Sedgwick Ave Display</option>
+                    <option value="Quicksand">Quicksand</option>
+                    <option value="Abril Fatface">Abril Fatface</option>
+                    <option value="VT323">VT323</option>
+                    <option value="cursive">Comic Sans Neue</option>
+                </select>
+            </div>
+            <div class="selector">
+                <button id="text_send" class="btn btn-default">ADD TEXT</button>
+            </div>
+        </div>
+        
+        <div id="areadetrabajo">
+            <!-- AQUÍ ES DONDE OCURRE LA MAGIA ♫ -->
+        </div>
+        
+        <button style="display: none" id="botonsito" class="btn btn-default">BOTÓN SECRETO</button>
+        <button class="btn btn-danger" id="exportsvg">EXPORT TO SVG</button>
+        <button class="btn btn-danger" id="exportpng">EXPORT TO PNG</button>
+        <button class="btn btn-success" id="nigga">NIGGA CHOICE</button>
+        
+        <canvas id="magiczone1" style="display: none" width="1000px" height="600px"></canvas> 
+        <div class="magiczone2" style="display: none"></div>
+        
+    </body>
+    
+</html>
